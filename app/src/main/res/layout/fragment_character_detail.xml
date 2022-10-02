@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/infoData"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageButton
+                    android:id="@+id/backButton"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_baseline_arrow_back_24" />
+
+                <ImageView
+                    android:id="@+id/characterImage"
+                    android:layout_width="146dp"
+                    android:layout_height="146dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:background="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/characterName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:text="asd asd"
+                    android:textColor="@color/black"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="Informations"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <include
+                    android:id="@+id/genderInfo"
+                    layout="@layout/item_character_info" />
+
+                <include
+                    android:id="@+id/statusInfo"
+                    layout="@layout/item_character_info" />
+
+                <include
+                    android:id="@+id/specieInfo"
+                    layout="@layout/item_character_info" />
+
+                <include
+                    android:id="@+id/originInfo"
+                    layout="@layout/item_character_info" />
+
+                <include
+                    android:id="@+id/typeInfo"
+                    layout="@layout/item_character_info" />
+
+                <include
+                    android:id="@+id/locationInfo"
+                    layout="@layout/item_character_info" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/episodesTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Episodes"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/infoData" />
+
+            <TextView
+                android:id="@+id/episodeCountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="number"
+                app:layout_constraintBottom_toTopOf="@+id/episodesList"
+                app:layout_constraintStart_toEndOf="@+id/episodesTextView" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/episodesList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/episodesTextView"
+                app:layout_constraintVertical_bias="1.0"
+
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
