@@ -13,7 +13,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 class Repository {
     val BASE_URL = "https://rickandmortyapi.com"
     val apiService: ApiService
-    var characters: CharactersResponse? = null
 
     init {
         val client = OkHttpClient.Builder().build()
@@ -21,20 +20,6 @@ class Repository {
             .addConverterFactory(GsonConverterFactory.create()).build()
             .create(ApiService::class.java)
     }
-    /* fun getAllCharacters(): MutableLiveData<CharacterResponse> {
-         apiService.getCharacters().enqueue(object : Callback<CharacterResponse> {
-             override fun onResponse(
-                 call: Call<CharacterResponse>,
-                 response: Response<CharacterResponse>
-             ) {
-                 characters.value = response.body()
-             }
-             override fun onFailure(call: Call<CharacterResponse>, t: Throwable) {
-                 t.printStackTrace()
-             }
-         })
-         return characters
-     }*/
 }
 
 

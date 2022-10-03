@@ -42,22 +42,24 @@ class EpisodeDetailFragment : Fragment() {
             binding.castCountTextView.text = it.size.toString() + " characters"
         }
         viewModel.episodeResponse.observe(viewLifecycleOwner) {
-                with(it) {
-                binding.episodeName.text = name
-                binding.airdateTextView.text = air_date
-                binding.episodeCountTextView.text = episode
+            with(it) {
+                binding.episodeInfo.tagTextView.text = "Episode"
+                binding.episodeInfo.dataTextView.text = episode
+                binding.airDate.tagTextView.text = "Date"
+                binding.airDate.dataTextView.text =  air_date
+
             }
         }
         binding.backButton.setOnClickListener {
             findNavController().navigate(R.id.action_episodeDetailFragment_to_homeFragment)
         }
-        }
+    }
 
-        fun itemClick(characterId: String) {
-            val bundle = Bundle()
-            bundle.putString("character_id", characterId)
-            findNavController().navigate(R.id.action_episodeDetailFragment_to_characterDetailFragment, bundle)
-
-        }
+    fun itemClick(characterId: String) {
+        val bundle = Bundle()
+        bundle.putString("character_id", characterId)
+        findNavController().navigate(R.id.action_episodeDetailFragment_to_characterDetailFragment, bundle)
 
     }
+
+}

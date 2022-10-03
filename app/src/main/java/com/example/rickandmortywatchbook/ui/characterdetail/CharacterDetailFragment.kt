@@ -35,7 +35,6 @@ class CharacterDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getCharacterById(args.characterId)
-//viewModel.characterRespose.observe(viewLifecycleOwner, Observer<Character>() {
         viewModel.characterRespose.observe(viewLifecycleOwner) {
             with(it) {
                 Picasso.get().load(image).into(binding.characterImage)
@@ -60,7 +59,6 @@ class CharacterDetailFragment : Fragment() {
                 binding.locationInfo.dataTextView.text = location.name
 
             }
-            //}
             binding.episodesList.layoutManager = LinearLayoutManager(requireActivity())
             adapter = EpisodesAdapter( this::onEpisodeClick)
             binding.episodesList.adapter = adapter

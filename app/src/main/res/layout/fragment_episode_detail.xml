@@ -20,95 +20,76 @@
             android:id="@+id/episodeName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:layout_marginTop="44dp"
             android:text="Episode name"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/CountTagTextView"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/episodeInfoHolder"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:text="Episode"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/episodeName" />
+            android:layout_margin="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/episodeName">
 
-        <TextView
-            android:id="@+id/episodeCountTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="16dp"
-            android:text="S1E1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CountTagTextView" />
 
-        <TextView
-            android:id="@+id/dateTagTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="27dp"
-            android:text="Date"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/CountTagTextView"
-            app:layout_constraintTop_toBottomOf="@+id/episodeName" />
+            <include
+                android:id="@+id/episodeInfo"
+                layout="@layout/item_character_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
 
-        <TextView
-            android:id="@+id/airdateTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="03 - September - 2022"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/episodeCountTextView"
-            app:layout_constraintTop_toBottomOf="@+id/dateTagTextView" />
+            <include
+                android:id="@+id/airDate"
+                layout="@layout/item_character_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/castTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:text="Cast"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/episodeCountTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/episodeInfoHolder" />
+
         <TextView
             android:id="@+id/castCountTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="number"
-            app:layout_constraintStart_toEndOf="@+id/castTextView"
-            android:layout_margin="16dp"
-            android:layout_marginTop="50dp"
-            app:layout_constraintBottom_toTopOf="@+id/characterList"/>
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="17dp"
+            app:layout_constraintBottom_toTopOf="@+id/characterList"
+            app:layout_constraintStart_toEndOf="@+id/castTextView" />
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/characterList"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="16dp"
             android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/castTextView"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

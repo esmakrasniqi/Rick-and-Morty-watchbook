@@ -22,7 +22,6 @@ interface ApiService {
     @GET("/api/episode/{episodeId}")
     fun getEpisodeById(@Path("episodeId") episodeId: String): Call<Episode>
 
-
     @GET("/api/character/{characters}")
     fun getCharactersPerEpisode(@Path("characters") characters: String): Call<List<Character>>
 

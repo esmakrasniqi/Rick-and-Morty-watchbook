@@ -28,7 +28,6 @@ class CharacterDetailViewModel : ViewModel() {
                         ) + ","
                     }
                     getEpisodesPerCharacter(episodes)
-                    println("episodes" + episodes)
                     characterRespose.postValue(it)
                 }
             }

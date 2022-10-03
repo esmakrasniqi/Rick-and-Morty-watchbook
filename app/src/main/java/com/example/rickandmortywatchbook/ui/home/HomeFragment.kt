@@ -36,6 +36,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getCharacters()
+
         binding.filterButton.setOnClickListener {
             showDetailedFilterDialog()
         }
@@ -72,7 +73,6 @@ class HomeFragment : Fragment() {
     fun itemClick(characterId: String) {
         val bundle = Bundle()
         bundle.putString("character_id", characterId)
-//        println("charid" + characterId)
         findNavController().navigate(R.id.action_homeFragment_to_characterDetailFragment, bundle)
 
     }
