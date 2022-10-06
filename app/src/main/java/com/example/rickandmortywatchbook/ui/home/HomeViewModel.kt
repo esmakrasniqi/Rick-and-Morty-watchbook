@@ -36,9 +36,7 @@ class HomeViewModel : ViewModel() {
     }
 
     fun filterCharacters(
-        species: String? = null,
-        gender: String? = null,
-        status: String? = null,
+        species: String? = null, gender: String? = null, status: String? = null,
     ) {
         var url = "https://rickandmortyapi.com/api/character/?"
         url += "species=$species"
