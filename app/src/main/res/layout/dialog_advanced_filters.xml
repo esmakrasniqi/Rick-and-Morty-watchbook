@@ -42,6 +42,7 @@
             app:layout_constraintTop_toBottomOf="@id/dialogTitle">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/speciesEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
@@ -63,6 +64,7 @@
             app:layout_constraintTop_toBottomOf="@id/speciesInput">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/genderEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
